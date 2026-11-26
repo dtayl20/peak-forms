@@ -1,0 +1,20 @@
+# Peak Forms — Cloudflare Pages project config
+# Used for LOCAL dev bindings (wrangler pages dev). Remote bindings/vars are set
+# in the Cloudflare dashboard: Pages project -> Settings -> Bindings / Variables.
+name = "peak-forms"
+compatibility_date = "2025-01-01"
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "peak-forms-db"
+database_id = "00000000-0000-0000-0000-000000000000"
+
+[[r2_buckets]]
+binding = "UPLOADS"
+bucket_name = "form-uploads"
+
+# NOTE: no [vars] here on purpose — Pages git builds read wrangler.toml, so any
+# placeholder var would ship to production. Real values live in .dev.vars (local,
+# gitignored) and as dashboard Secrets on the Pages project (remote):
+# ADMIN_KEY, TURNSTILE_SECRET.

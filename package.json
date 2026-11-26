@@ -1,0 +1,22 @@
+{
+  "name": "peak-forms",
+  "private": true,
+  "version": "0.3.0",
+  "type": "module",
+  "description": "Peak Forms — drag-and-drop form builder + embeddable widget on Cloudflare Pages/D1",
+  "workspaces": [
+    "app"
+  ],
+  "scripts": {
+    "dev:app": "npm run dev -w app",
+    "dev:api": "wrangler pages dev dist --port 8788",
+    "build": "npm run build -w app && node scripts/after-build.mjs",
+    "db:init:local": "wrangler d1 execute peak-forms-db --local --file schema.sql",
+    "db:seed:local": "wrangler d1 execute peak-forms-db --local --file seed.sql",
+    "db:init": "wrangler d1 execute peak-forms-db --remote --file schema.sql",
+    "db:seed": "wrangler d1 execute peak-forms-db --remote --file seed.sql"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

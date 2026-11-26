@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.dev.vars
+.wrangler/
+*.local
+.DS_Store
+*.log
+
+# local env + scratch
+.env
+.env.*
+!.env.example
+tmp/
