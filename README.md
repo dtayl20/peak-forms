@@ -4,6 +4,8 @@ Drag-and-drop form builder + embeddable form widget, built for Cloudflare Pages 
 A Gravity-Forms-style builder that produces **plain-JS embeds** (no iframes), so forms
 live in the host page's DOM and **GTM / Facebook Pixel / analytics actually see submissions**.
 
+![Peak Forms widget embedded in a page](docs/widget-embed.png)
+
 **New here?** [SETUP.md](SETUP.md) takes you from clone to a submitted form locally.
 
 - **Builder app** — React + Vite + Tailwind + dnd-kit, served at `/manage/`
